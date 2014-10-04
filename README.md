@@ -8,7 +8,7 @@ Nothing to see here yet.
 
 Performance:
 
-* Font lock in a large C file.
+* Font lock in a large C file (run `(font-lock-fontify-region (point-min) (point-max))`).
 * Moving to the end of a large single-line file.
 * Existing regexp engine benchmarks.
 * Numeric calculations.

@@ -23,6 +23,9 @@ Performance:
 * Gnus with a large number of emails
 * Running a simple keyboard macro until the end of a buffer (C-u 0 F4)
   for a very large file.
+* A large number of overlays (magit?)
+* Generating a large amount of memory (flx is apparently good at this)
+  and playing with the GC configuration variables
 
 Memory usage:
 

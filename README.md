@@ -23,11 +23,12 @@ Performance:
 * Gnus with a large number of emails
 * Running a simple keyboard macro until the end of a buffer (C-u 0 F4)
   for a very large file.
-* A large number of overlays (magit?)
+* A large number of overlays (magit maybe, or
+  https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00616.html )
 * Generating a large amount of memory (flx is apparently good at this)
   and playing with the GC configuration variables
 * `isearch` with a pattern that matches pretty much everything in the
-  buffer
+  buffer (fun examples: `.*.*` `(.*)*`)
 
 Memory usage:
 

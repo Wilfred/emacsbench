@@ -26,6 +26,8 @@ Performance:
 * A large number of overlays (magit?)
 * Generating a large amount of memory (flx is apparently good at this)
   and playing with the GC configuration variables
+* `isearch` with a pattern that matches pretty much everything in the
+  buffer
 
 Memory usage:
 

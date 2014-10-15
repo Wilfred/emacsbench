@@ -32,6 +32,8 @@ Performance:
 * Time taken to byte-compile files (see
   [this emacs.SE answer](http://emacs.stackexchange.com/a/2092/304))
 * Compare performance before and after byte-compilation
+* compare performance with and without lexical binding (see
+  [this emacs.SSE answer](http://emacs.stackexchange.com/q/2129))
 * Stress test GC: repeatedly create some large lists. Experiment with
   the different GC configuration options (and possibly the different
   hash table options)

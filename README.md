@@ -41,6 +41,10 @@ Memory usage:
 * Measuring memory usage at startup, and after opening a large number
   of buffers.
 
+Compilation:
+
+* Compare the size of bytecode between different Emacs versions.
+
 It would also be interesting to run the benchmarks inside a user's
 usual environment, to see if their customisations are affecting
 performance (and how much).

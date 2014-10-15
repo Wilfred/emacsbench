@@ -8,7 +8,7 @@ Nothing to see here yet.
 
 Performance:
 
-* Font lock in a large C file (run `(font-lock-fontify-region (point-min) (point-max))`).
+* Font lock in a large C file (run `(font-lock-fontify-region (point-min) (point-max))`)
 * Moving to the end of a large single-line file.
 * which-func-mode in a large class (often slow in my experience).
 * Existing regexp engine benchmarks
@@ -29,8 +29,18 @@ Performance:
   and playing with the GC configuration variables
 * `isearch` with a pattern that matches pretty much everything in the
   buffer (fun examples: `.*.*` `(.*)*`)
+* Time taken to byte-compile files (see
+  [this emacs.SE answer](http://emacs.stackexchange.com/a/2092/304))
+* Compare performance before and after byte-compilation
+* Stress test GC: repeatedly create some large lists. Experiment with
+  the different GC configuration options (and possibly the different
+  hash table options)
 
 Memory usage:
 
 * Measuring memory usage at startup, and after opening a large number
   of buffers.
+
+It would also be interesting to run the benchmarks inside a user's
+usual environment, to see if their customisations are affecting
+performance (and how much).

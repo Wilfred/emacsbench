@@ -37,6 +37,9 @@ Performance:
 * Stress test GC: repeatedly create some large lists. Experiment with
   the different GC configuration options (and possibly the different
   hash table options)
+* [Linum can be slow](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3)
+  but how much slower?
+
 
 Memory usage:
 

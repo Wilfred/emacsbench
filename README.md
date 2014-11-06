@@ -73,6 +73,7 @@ We could also look at benchmarking popular third-party packages:
 Time:
 
 * Fuzzy completions modes (grizzl, helm)
+* Magit can be very slow when showing large diffs.
 
 ### .emacs.d
 

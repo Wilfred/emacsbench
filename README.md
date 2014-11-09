@@ -13,7 +13,8 @@ Some tests we can just run against different Emacs versions.
 Time:
 
 * Moving to the end of a large single-line file.
-* Compare performance before and after byte-compilation
+* Compare performance before and after byte-compilation (note that
+  rainbow-delimiters uses lexical-binding purely for performance)
 * compare performance with and without lexical binding (see
   [this emacs.SSE answer](http://emacs.stackexchange.com/q/2129))
 * Stress test GC: repeatedly create some large lists. Experiment with

@@ -81,3 +81,8 @@ Time:
 It would also be interesting to run the benchmarks inside a user's
 usual environment, to see if their customisations are affecting
 performance (and how much).
+
+## References
+
+Emacs does have some built-in infrastructure for this:
+http://www.gnu.org/software/emacs/manual/html_node/elisp/Profiling.html

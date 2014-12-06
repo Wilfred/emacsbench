@@ -4,6 +4,23 @@ Experimenting with some ideas around benchmarking Emacs itself.
 
 No code here yet.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
+**Table of Contents**
+
+- [Emacs Stress Tests](#emacs-stress-tests)
+    - [Ideas](#ideas)
+        - [Isolated](#isolated)
+        - [Included Major Modes](#included-major-modes)
+        - [Reference Elisp](#reference-elisp)
+        - [Third-party Elisp](#third-party-elisp)
+        - [.emacs.d](#emacsd)
+    - [References](#references)
+        - [Tooling](#tooling)
+        - [Known Performance Issues](#known-performance-issues)
+    - [Contributing](#contributing)
+
+<!-- markdown-toc end -->
+
 ## Ideas
 
 ### Isolated
@@ -58,8 +75,6 @@ Time:
   buffer (fun examples: `.*.*` `(.*)*`)
 * Time taken to byte-compile files (see
   [this emacs.SE answer](http://emacs.stackexchange.com/a/2092/304))
-* [Linum can be slow](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3)
-  but how much slower?
 
 ### Reference Elisp
 
@@ -84,5 +99,25 @@ performance (and how much).
 
 ## References
 
-Emacs does have some built-in infrastructure for this:
+### Tooling
+
+Emacs does have some built-in profiling tools:
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Profiling.html
+
+### Known Performance Issues
+
+* Comint renders text slowly, particularly on OS X
+([ref 1](http://www.reddit.com/r/emacs/comments/2e8byy/slowass_text_rendering/ck06mzi)
+use [this file](https://gist.github.com/Wilfred/59795973e6231cefe8f9)
+to reproduce,
+[ref 2](https://github.com/JuliaLang/julia/pull/8026))
+* Very long lines slow down movement and display
+  ([ref 1](http://emacs.stackexchange.com/q/598/304), [ref 2](http://www.reddit.com/r/emacs/comments/2o483m/if_the_display_code_of_emacs_is_complex_why_it/cmltfq9))
+* Magit can be very slow when viewing large diffs
+([ref](https://github.com/Wilfred/emacsbench/issues/1))
+* Linum can be slow on large files
+  ([Ref](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3))
+
+## Contributing
+
+Please file bugs and report areas where you find Emacs is too slow!

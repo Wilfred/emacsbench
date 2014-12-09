@@ -1,4 +1,4 @@
-# Emacs Stress Tests
+# Emacs Benchmarks
 
 Experimenting with some ideas around benchmarking Emacs itself.
 

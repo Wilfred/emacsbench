@@ -116,7 +116,8 @@ to reproduce,
 * Magit can be very slow when viewing large diffs
 ([ref](https://github.com/Wilfred/emacsbench/issues/1))
 * Linum can be slow on large files
-  ([Ref](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3))
+([Ref](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3))
+* Font-lock can be sensitive to garbage collection ([ref](http://emacs.stackexchange.com/q/5351/304))
 
 ## Contributing
 

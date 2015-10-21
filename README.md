@@ -49,6 +49,8 @@ Time:
   for a very large file.
 * Generating a large amount of memory (flx is apparently good at this)
   and playing with the GC configuration variables
+* Parsing large JSON with json.el
+  https://lists.gnu.org/archive/html/emacs-devel/2015-10/msg01651.html
 
 Memory usage:
 

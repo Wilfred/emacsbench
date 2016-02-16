@@ -122,6 +122,7 @@ to reproduce,
 ([Ref](http://www.reddit.com/r/emacs/comments/2k5nhp/welcome_to_the_dark_side_switching_to_emacs/clk43j7?context=3))
 * Font-lock can be sensitive to garbage collection ([ref](http://emacs.stackexchange.com/q/5351/304))
 * Helm with very large numbers of candidates ([ref](http://www.reddit.com/r/emacs/comments/2pvmkm/helm_projectile_now_enables_fuzzy_matching_by/cn1wg2d))
+* New byte codes added to improve performance ([ref](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg00826.html))
 
 ## Contributing
 

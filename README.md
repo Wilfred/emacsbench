@@ -45,7 +45,8 @@ Time:
 * Primitive numeric calculations
 * Startup time
 * A large number of overlays (magit maybe, or
-  https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00616.html )
+  https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00616.html
+  ) (see also [proposed speedups](https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00671.html))
 * Running a simple keyboard macro until the end of a buffer (C-u 0 F4)
   for a very large file.
 * Generating a large amount of memory (flx is apparently good at this)

@@ -53,6 +53,8 @@ Time:
   and playing with the GC configuration variables
 * Parsing large JSON with json.el
   https://lists.gnu.org/archive/html/emacs-devel/2015-10/msg01651.html
+* The consequences of `--with-wide-int` when compiling
+  Emacs. `configure.ac` claims 10-30% slowdown.
 
 Memory usage:
 

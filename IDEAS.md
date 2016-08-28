@@ -56,8 +56,6 @@ Time:
 * Gnus with a large number of emails
 * `isearch` with a pattern that matches pretty much everything in the
   buffer (fun examples: `.*.*` `(.*)*`)
-* Time taken to byte-compile files (see
-  [this emacs.SE answer](http://emacs.stackexchange.com/a/2092/304))
 
 ### Reference Elisp
 

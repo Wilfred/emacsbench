@@ -7,6 +7,10 @@ This project is an attempt to get some hard numbers.
 
 ## Usage
 
+benchmarks/ contains elisp benchmark script. Each file documents what
+it is testing. Every script ends by printing a computed value, to
+confirm that Emacs has actually done what we expected.
+
 ``` shell
 $ for f in benchmarks/*; do echo $f; time emacs --quick --script $f; done
 ```

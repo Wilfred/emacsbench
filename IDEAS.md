@@ -19,7 +19,6 @@ Time:
   (e.g. [1](http://sljit.sourceforge.net/regex_perf.html)). Look at
   both average-case and worst-case.
 * Primitive list manipulations.
-* Primitive numeric calculations
 * Startup time
 * A large number of overlays (magit maybe, or
   https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00616.html
@@ -51,7 +50,6 @@ For some tests we want to test the included major modes.
 Time:
 
 * Numerics using calc.
-* Font lock in a large C file (run `(font-lock-fontify-region (point-min) (point-max))`)
 * which-func-mode in a large class (often slow in my experience).
 * Org agenda search, org sparse tree search on a large org file.
 * Org refile ido completion (with and without ido-hacks)
@@ -105,4 +103,3 @@ to reproduce,
 * Font-lock can be sensitive to garbage collection ([ref](http://emacs.stackexchange.com/q/5351/304))
 * Helm with very large numbers of candidates ([ref](http://www.reddit.com/r/emacs/comments/2pvmkm/helm_projectile_now_enables_fuzzy_matching_by/cn1wg2d))
 * New byte codes added to improve performance ([ref](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg00826.html))
-

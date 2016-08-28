@@ -1,8 +1,9 @@
 # Emacs Benchmarks
 
-Experimenting with some ideas around benchmarking Emacs itself.
+How fast is Emacs itself? How fast are the primitives? How fast is the
+elisp interpreter?
 
-No code here yet.
+This project is an attempt to get some hard numbers.
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc/generate-toc again -->
 **Table of Contents**
@@ -20,6 +21,21 @@ No code here yet.
     - [Contributing](#contributing)
 
 <!-- markdown-toc end -->
+
+## Usage
+
+``` shell
+$ for f in benchmarks/*; do echo $f; time emacs --quick --script $f; done
+```
+
+Use of Emacs for scripting is
+[based on this blog post](http://www.lunaryorn.com/2014/08/12/emacs-script-pitfalls.html).
+
+TODO
+
+* bytecode performance metrics
+* see if performance is equivalent in an emacs GUI
+* see if loading site-lisp affects performance
 
 ## Ideas
 

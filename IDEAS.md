@@ -101,3 +101,4 @@ to reproduce,
 * Font-lock can be sensitive to garbage collection ([ref](http://emacs.stackexchange.com/q/5351/304))
 * Helm with very large numbers of candidates ([ref](http://www.reddit.com/r/emacs/comments/2pvmkm/helm_projectile_now_enables_fuzzy_matching_by/cn1wg2d))
 * New byte codes added to improve performance ([ref](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg00826.html))
+* Emacs 24 is faster than 25 for shen-elisp ([ref](http://lists.gnu.org/archive/html/emacs-devel/2016-08/msg00540.html))

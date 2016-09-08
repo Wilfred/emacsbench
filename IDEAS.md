@@ -32,7 +32,10 @@ Time:
 * The consequences of `--with-wide-int` when compiling
   Emacs. `configure.ac` claims 10-30% slowdown.
 * Positional arguments vs common lisp style keyword arguments
-  (the latter [are slower apparently](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg01400.html))
+  (the latter
+  [are slower apparently](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg01400.html))
+* Measure the performance impact of eager-macro expansion.
+  
 
 Memory usage:
 

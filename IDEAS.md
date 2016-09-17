@@ -7,6 +7,7 @@ Some tests we can just run against different Emacs versions.
 Time:
 
 * Moving to the end of a large single-line file.
+  (with and without `fast-but-imprecise-scrolling` in 25.1)
 * Compare performance before and after byte-compilation (note that
   rainbow-delimiters uses lexical-binding purely for performance)
   ([relevant emacs devel discussion](https://lists.gnu.org/archive/html/emacs-devel/2015-10/msg01695.html),

@@ -14,6 +14,9 @@ emacs_git:
 NO_COLOR=\x1b[0m
 GREEN=\x1b[32;01m
 
+clean:
+	rm -rf builds
+
 emacs-%: emacs_git
 	$(eval VERSION = $(shell echo -n $@ | sed 's/emacs-//'))
 	echo ">>>>>>>>>>>>>>>> BUILDING Emacs ${VERSION}"

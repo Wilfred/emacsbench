@@ -18,7 +18,7 @@ clean:
 	rm -rf builds
 
 emacs-%: emacs_git
-	echo ">>>>>>>>>>>>>>>> BUILDING $@"
+	echo "${GREEN}====================== BUILDING $@ ======================${NO_COLOR}"
 	$(eval PREFIX = $(abspath "builds/$@"))
 	mkdir -p ${PREFIX}
 

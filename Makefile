@@ -11,16 +11,19 @@ emacs_git:
 # multiple Emacs versions in parallel.
 .NOTPARALLEL:
 
+NO_COLOR=\x1b[0m
+GREEN=\x1b[32;01m
+
 emacs-%: emacs_git
 	$(eval VERSION = $(shell echo -n $@ | sed 's/emacs-//'))
 	echo ">>>>>>>>>>>>>>>> BUILDING Emacs ${VERSION}"
 	$(eval PREFIX = $(abspath "builds/emacs_${VERSION}"))
 	mkdir -p ${PREFIX}
 
-	-cd emacs_git && make clean | sed "s/^/[${VERSION}] /"
-	cd emacs_git && git checkout emacs-${VERSION} | sed "s/^/[${VERSION}] /"
+	-cd emacs_git && make clean | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"
+	cd emacs_git && git checkout emacs-${VERSION} | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"
 
-	cd emacs_git && ./autogen.sh all | sed "s/^/[${VERSION}] /"
-	cd emacs_git && ./configure --prefix=$PREFIX | sed "s/^/[${VERSION}] /"
-	cd emacs_git && make -j 3 | sed "s/^/[${VERSION}] /"
-	cd emacs_git && make install | sed "s/^/[${VERSION}] /"
+	cd emacs_git && ./autogen.sh all | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"
+	cd emacs_git && ./configure --prefix=${PREFIX} | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"
+	cd emacs_git && make -j 3 | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"
+	cd emacs_git && make install | sed "s/^/[${GREEN}${VERSION}${NO_COLOR}] /"

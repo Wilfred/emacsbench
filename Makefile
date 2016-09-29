@@ -26,6 +26,6 @@ emacs-%: emacs_git
 	cd emacs_git && git checkout $@ | sed "s/^/[${GREEN}$@ Checkout${NO_COLOR}] /"
 
 	cd emacs_git && ./autogen.sh all | sed "s/^/[${GREEN}$@ Autogen${NO_COLOR}] /"
-	cd emacs_git && ./configure --prefix=${PREFIX} --with-jpeg=no | sed "s/^/[${GREEN}$@ Configure${NO_COLOR}] /"
+	cd emacs_git && ./configure --prefix=${PREFIX} --with-jpeg=no --with-gif=no | sed "s/^/[${GREEN}$@ Configure${NO_COLOR}] /"
 	cd emacs_git && make -j 3 | sed "s/^/[${GREEN}$@ Build${NO_COLOR}] /"
 	cd emacs_git && make install | sed "s/^/[${GREEN}$@ Install${NO_COLOR}] /"

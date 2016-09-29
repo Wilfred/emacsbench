@@ -18,15 +18,14 @@ clean:
 	rm -rf builds
 
 emacs-%: emacs_git
-	$(eval VERSION = $(shell echo -n $@ | sed 's/emacs-//'))
-	echo ">>>>>>>>>>>>>>>> BUILDING Emacs ${VERSION}"
-	$(eval PREFIX = $(abspath "builds/emacs_${VERSION}"))
+	echo ">>>>>>>>>>>>>>>> BUILDING $@"
+	$(eval PREFIX = $(abspath "builds/$@"))
 	mkdir -p ${PREFIX}
 
-	-cd emacs_git && git clean -dfx | sed "s/^/[${GREEN}${VERSION} Clean${NO_COLOR}] /"
-	cd emacs_git && git checkout emacs-${VERSION} | sed "s/^/[${GREEN}${VERSION} Checkout${NO_COLOR}] /"
+	-cd emacs_git && git clean -dfx | sed "s/^/[${GREEN}$@ Clean${NO_COLOR}] /"
+	cd emacs_git && git checkout $@ | sed "s/^/[${GREEN}$@ Checkout${NO_COLOR}] /"
 
-	cd emacs_git && ./autogen.sh all | sed "s/^/[${GREEN}${VERSION} Autogen${NO_COLOR}] /"
-	cd emacs_git && ./configure --prefix=${PREFIX} --with-jpeg=no | sed "s/^/[${GREEN}${VERSION} Configure${NO_COLOR}] /"
-	cd emacs_git && make -j 3 | sed "s/^/[${GREEN}${VERSION} Build${NO_COLOR}] /"
-	cd emacs_git && make install | sed "s/^/[${GREEN}${VERSION} Install${NO_COLOR}] /"
+	cd emacs_git && ./autogen.sh all | sed "s/^/[${GREEN}$@ Autogen${NO_COLOR}] /"
+	cd emacs_git && ./configure --prefix=${PREFIX} --with-jpeg=no | sed "s/^/[${GREEN}$@ Configure${NO_COLOR}] /"
+	cd emacs_git && make -j 3 | sed "s/^/[${GREEN}$@ Build${NO_COLOR}] /"
+	cd emacs_git && make install | sed "s/^/[${GREEN}$@ Install${NO_COLOR}] /"

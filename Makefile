@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 
-all: emacs_git emacs_25_1 emacs_24_5 emacs_24_4 emacs_24_3
+all: emacs-25.1 emacs-24.5 emacs-24.4 emacs-24.3
 
 emacs_git:
 	# The GitHub repo seems to clone faster than the upstream
@@ -11,47 +11,16 @@ emacs_git:
 # multiple Emacs versions in parallel.
 .NOTPARALLEL:
 
-emacs_25_1:
-	echo ">>>>>>>>>>>>>>>> BUILDING Emacs 25.1"
-	mkdir -p builds/emacs_25_1
-	cd emacs_git && make clean
-	cd emacs_git && git checkout emacs-25.1
+emacs-%: emacs_git
+	$(eval VERSION = $(shell echo -n $@ | sed 's/emacs-//'))
+	echo ">>>>>>>>>>>>>>>> BUILDING Emacs ${VERSION}"
+	$(eval PREFIX = $(abspath "builds/emacs_${VERSION}"))
+	mkdir -p ${PREFIX}
 
-	cd emacs_git && ./autogen.sh all
-	cd emacs_git && ./configure --prefix=builds/emacs_25_1
-	cd emacs_git && make -j 3
-	cd emacs_git && make install
+	-cd emacs_git && make clean | sed "s/^/[${VERSION}] /"
+	cd emacs_git && git checkout emacs-${VERSION} | sed "s/^/[${VERSION}] /"
 
-emacs_24_5:
-	echo ">>>>>>>>>>>>>>>> BUILDING Emacs 24.5"
-	mkdir -p builds/emacs_24_5
-	cd emacs_git && make clean
-	cd emacs_git && git checkout emacs-24.5
-
-	cd emacs_git && ./autogen.sh all
-	cd emacs_git && ./configure --prefix=builds/emacs_24_5
-	cd emacs_git && make -j 3
-	cd emacs_git && make install
-
-emacs_24_4:
-	echo ">>>>>>>>>>>>>>>> BUILDING Emacs 24.4"
-	mkdir -p builds/emacs_24_4
-	cd emacs_git && make clean
-	cd emacs_git && git checkout emacs-24.4
-
-	cd emacs_git && ./autogen.sh all
-	cd emacs_git && ./configure --prefix=builds/emacs_24_4
-	cd emacs_git && make -j 3
-	cd emacs_git && make install
-
-# TODO: there's a lot of duplication here, factor it out.
-emacs_24_3:
-	echo ">>>>>>>>>>>>>>>> BUILDING Emacs 24.3"
-	mkdir -p builds/emacs_24_3
-	cd emacs_git && make clean
-	cd emacs_git && git checkout emacs-24.3
-
-	cd emacs_git && ./autogen.sh all
-	cd emacs_git && ./configure --prefix=builds/emacs_24_3
-	cd emacs_git && make -j 3
-	cd emacs_git && make install
+	cd emacs_git && ./autogen.sh all | sed "s/^/[${VERSION}] /"
+	cd emacs_git && ./configure --prefix=$PREFIX | sed "s/^/[${VERSION}] /"
+	cd emacs_git && make -j 3 | sed "s/^/[${VERSION}] /"
+	cd emacs_git && make install | sed "s/^/[${VERSION}] /"

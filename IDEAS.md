@@ -21,7 +21,8 @@ Time:
   (e.g. [1](http://sljit.sourceforge.net/regex_perf.html)). Look at
   both average-case and worst-case.
 * Primitive list manipulations.
-* Startup time
+* Startup time (note the changes in Emacs 25.1 to ensure
+  package-initialize is not called more than once)
 * A large number of overlays (magit maybe, or
   https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00616.html
   ) (see also [proposed speedups](https://lists.gnu.org/archive/html/emacs-devel/2014-09/msg00671.html))

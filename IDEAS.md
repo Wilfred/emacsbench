@@ -38,7 +38,8 @@ Time:
   (the latter
   [are slower apparently](https://lists.gnu.org/archive/html/emacs-devel/2016-02/msg01400.html))
 * Measure the performance impact of eager-macro expansion.
-  
+* Measure the performance of bubble sort (used by
+  [el-compilador](https://github.com/tromey/el-compilador) as a benchmark)
 
 Memory usage:
 

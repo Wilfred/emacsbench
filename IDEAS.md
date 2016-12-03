@@ -95,6 +95,11 @@ performance (and how much).
 Emacs does have some built-in profiling tools:
 http://www.gnu.org/software/emacs/manual/html_node/elisp/Profiling.html
 
+### Raytracer
+
+[emacs-jit](https://github.com/burtonsamograd/emacs-jit) has an elisp
+raytracer used to benchmark speedups.
+
 ### Known Performance Issues
 
 * Comint renders text slowly, particularly on OS X
